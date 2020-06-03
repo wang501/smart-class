@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java18-dao/Java18-dao.iml" filepath="$PROJECT_DIR$/Java18-dao/Java18-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java18-manage/Java18-manage.iml" filepath="$PROJECT_DIR$/Java18-manage/Java18-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java18-model/Java18-model.iml" filepath="$PROJECT_DIR$/Java18-model/Java18-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java18-service/Java18-service.iml" filepath="$PROJECT_DIR$/Java18-service/Java18-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart-class.iml" filepath="$PROJECT_DIR$/smart-class.iml" />
+    </modules>
+  </component>
+</project>
