@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.java18.sys.mapper.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="cn.java18.sys.model.SysRole">
+    <!--@mbg.generated-->
+    <!--@Table sys_role-->
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_default" jdbcType="INTEGER" property="roleDefault" />
+    <result column="role_status" jdbcType="INTEGER" property="roleStatus" />
+    <result column="role_explain" jdbcType="VARCHAR" property="roleExplain" />
+    <result column="role_cuid" jdbcType="INTEGER" property="roleCuid" />
+    <result column="role_cdate" jdbcType="TIMESTAMP" property="roleCdate" />
+    <result column="role_euid" jdbcType="INTEGER" property="roleEuid" />
+    <result column="role_edate" jdbcType="TIMESTAMP" property="roleEdate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    role_id, role_name, role_default, role_status, role_explain, role_cuid, role_cdate, 
+    role_euid, role_edate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_role
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from sys_role
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="role_id" keyProperty="roleId" parameterType="cn.java18.sys.model.SysRole" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_role (role_name, role_default, role_status, 
+      role_explain, role_cuid, role_cdate, 
+      role_euid, role_edate)
+    values (#{roleName,jdbcType=VARCHAR}, #{roleDefault,jdbcType=INTEGER}, #{roleStatus,jdbcType=INTEGER}, 
+      #{roleExplain,jdbcType=VARCHAR}, #{roleCuid,jdbcType=INTEGER}, #{roleCdate,jdbcType=TIMESTAMP}, 
+      #{roleEuid,jdbcType=INTEGER}, #{roleEdate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="role_id" keyProperty="roleId" parameterType="cn.java18.sys.model.SysRole" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleName != null">
+        role_name,
+      </if>
+      <if test="roleDefault != null">
+        role_default,
+      </if>
+      <if test="roleStatus != null">
+        role_status,
+      </if>
+      <if test="roleExplain != null">
+        role_explain,
+      </if>
+      <if test="roleCuid != null">
+        role_cuid,
+      </if>
+      <if test="roleCdate != null">
+        role_cdate,
+      </if>
+      <if test="roleEuid != null">
+        role_euid,
+      </if>
+      <if test="roleEdate != null">
+        role_edate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleDefault != null">
+        #{roleDefault,jdbcType=INTEGER},
+      </if>
+      <if test="roleStatus != null">
+        #{roleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="roleExplain != null">
+        #{roleExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCuid != null">
+        #{roleCuid,jdbcType=INTEGER},
+      </if>
+      <if test="roleCdate != null">
+        #{roleCdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roleEuid != null">
+        #{roleEuid,jdbcType=INTEGER},
+      </if>
+      <if test="roleEdate != null">
+        #{roleEdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.java18.sys.model.SysRole">
+    <!--@mbg.generated-->
+    update sys_role
+    <set>
+      <if test="roleName != null">
+        role_name = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleDefault != null">
+        role_default = #{roleDefault,jdbcType=INTEGER},
+      </if>
+      <if test="roleStatus != null">
+        role_status = #{roleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="roleExplain != null">
+        role_explain = #{roleExplain,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCuid != null">
+        role_cuid = #{roleCuid,jdbcType=INTEGER},
+      </if>
+      <if test="roleCdate != null">
+        role_cdate = #{roleCdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roleEuid != null">
+        role_euid = #{roleEuid,jdbcType=INTEGER},
+      </if>
+      <if test="roleEdate != null">
+        role_edate = #{roleEdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.java18.sys.model.SysRole">
+    <!--@mbg.generated-->
+    update sys_role
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      role_default = #{roleDefault,jdbcType=INTEGER},
+      role_status = #{roleStatus,jdbcType=INTEGER},
+      role_explain = #{roleExplain,jdbcType=VARCHAR},
+      role_cuid = #{roleCuid,jdbcType=INTEGER},
+      role_cdate = #{roleCdate,jdbcType=TIMESTAMP},
+      role_euid = #{roleEuid,jdbcType=INTEGER},
+      role_edate = #{roleEdate,jdbcType=TIMESTAMP}
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </update>
+</mapper>

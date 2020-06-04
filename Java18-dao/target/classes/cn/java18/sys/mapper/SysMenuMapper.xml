@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.java18.sys.mapper.SysMenuMapper">
+  <resultMap id="BaseResultMap" type="cn.java18.sys.model.SysMenu">
+    <!--@mbg.generated-->
+    <!--@Table sys_menu-->
+    <id column="menu_id" jdbcType="INTEGER" property="menuId" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="menu_pid" jdbcType="INTEGER" property="menuPid" />
+    <result column="menu_no" jdbcType="VARCHAR" property="menuNo" />
+    <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
+    <result column="menu_target" jdbcType="INTEGER" property="menuTarget" />
+    <result column="menu_min_ico" jdbcType="VARCHAR" property="menuMinIco" />
+    <result column="menu_max_ico" jdbcType="VARCHAR" property="menuMaxIco" />
+    <result column="menu_show" jdbcType="INTEGER" property="menuShow" />
+    <result column="menu_order" jdbcType="INTEGER" property="menuOrder" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    menu_id, menu_name, menu_pid, menu_no, menu_url, menu_target, menu_min_ico, menu_max_ico, 
+    menu_show, menu_order
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from sys_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="menu_id" keyProperty="menuId" parameterType="cn.java18.sys.model.SysMenu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_menu (menu_name, menu_pid, menu_no, 
+      menu_url, menu_target, menu_min_ico, 
+      menu_max_ico, menu_show, menu_order
+      )
+    values (#{menuName,jdbcType=VARCHAR}, #{menuPid,jdbcType=INTEGER}, #{menuNo,jdbcType=VARCHAR}, 
+      #{menuUrl,jdbcType=VARCHAR}, #{menuTarget,jdbcType=INTEGER}, #{menuMinIco,jdbcType=VARCHAR}, 
+      #{menuMaxIco,jdbcType=VARCHAR}, #{menuShow,jdbcType=INTEGER}, #{menuOrder,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="menu_id" keyProperty="menuId" parameterType="cn.java18.sys.model.SysMenu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuName != null">
+        menu_name,
+      </if>
+      <if test="menuPid != null">
+        menu_pid,
+      </if>
+      <if test="menuNo != null">
+        menu_no,
+      </if>
+      <if test="menuUrl != null">
+        menu_url,
+      </if>
+      <if test="menuTarget != null">
+        menu_target,
+      </if>
+      <if test="menuMinIco != null">
+        menu_min_ico,
+      </if>
+      <if test="menuMaxIco != null">
+        menu_max_ico,
+      </if>
+      <if test="menuShow != null">
+        menu_show,
+      </if>
+      <if test="menuOrder != null">
+        menu_order,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuName != null">
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuPid != null">
+        #{menuPid,jdbcType=INTEGER},
+      </if>
+      <if test="menuNo != null">
+        #{menuNo,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null">
+        #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuTarget != null">
+        #{menuTarget,jdbcType=INTEGER},
+      </if>
+      <if test="menuMinIco != null">
+        #{menuMinIco,jdbcType=VARCHAR},
+      </if>
+      <if test="menuMaxIco != null">
+        #{menuMaxIco,jdbcType=VARCHAR},
+      </if>
+      <if test="menuShow != null">
+        #{menuShow,jdbcType=INTEGER},
+      </if>
+      <if test="menuOrder != null">
+        #{menuOrder,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.java18.sys.model.SysMenu">
+    <!--@mbg.generated-->
+    update sys_menu
+    <set>
+      <if test="menuName != null">
+        menu_name = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuPid != null">
+        menu_pid = #{menuPid,jdbcType=INTEGER},
+      </if>
+      <if test="menuNo != null">
+        menu_no = #{menuNo,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null">
+        menu_url = #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuTarget != null">
+        menu_target = #{menuTarget,jdbcType=INTEGER},
+      </if>
+      <if test="menuMinIco != null">
+        menu_min_ico = #{menuMinIco,jdbcType=VARCHAR},
+      </if>
+      <if test="menuMaxIco != null">
+        menu_max_ico = #{menuMaxIco,jdbcType=VARCHAR},
+      </if>
+      <if test="menuShow != null">
+        menu_show = #{menuShow,jdbcType=INTEGER},
+      </if>
+      <if test="menuOrder != null">
+        menu_order = #{menuOrder,jdbcType=INTEGER},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.java18.sys.model.SysMenu">
+    <!--@mbg.generated-->
+    update sys_menu
+    set menu_name = #{menuName,jdbcType=VARCHAR},
+      menu_pid = #{menuPid,jdbcType=INTEGER},
+      menu_no = #{menuNo,jdbcType=VARCHAR},
+      menu_url = #{menuUrl,jdbcType=VARCHAR},
+      menu_target = #{menuTarget,jdbcType=INTEGER},
+      menu_min_ico = #{menuMinIco,jdbcType=VARCHAR},
+      menu_max_ico = #{menuMaxIco,jdbcType=VARCHAR},
+      menu_show = #{menuShow,jdbcType=INTEGER},
+      menu_order = #{menuOrder,jdbcType=INTEGER}
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+</mapper>

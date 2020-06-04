@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.java18.sys.mapper.SysRoleMenuMapper">
+  <resultMap id="BaseResultMap" type="cn.java18.sys.model.SysRoleMenu">
+    <!--@mbg.generated-->
+    <!--@Table sys_role_menu-->
+    <id column="srm_id" jdbcType="INTEGER" property="srmId" />
+    <result column="role_pid" jdbcType="INTEGER" property="rolePid" />
+    <result column="menu_pid" jdbcType="INTEGER" property="menuPid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    srm_id, role_pid, menu_pid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_role_menu
+    where srm_id = #{srmId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from sys_role_menu
+    where srm_id = #{srmId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="srm_id" keyProperty="srmId" parameterType="cn.java18.sys.model.SysRoleMenu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_role_menu (role_pid, menu_pid)
+    values (#{rolePid,jdbcType=INTEGER}, #{menuPid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="srm_id" keyProperty="srmId" parameterType="cn.java18.sys.model.SysRoleMenu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_role_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rolePid != null">
+        role_pid,
+      </if>
+      <if test="menuPid != null">
+        menu_pid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rolePid != null">
+        #{rolePid,jdbcType=INTEGER},
+      </if>
+      <if test="menuPid != null">
+        #{menuPid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.java18.sys.model.SysRoleMenu">
+    <!--@mbg.generated-->
+    update sys_role_menu
+    <set>
+      <if test="rolePid != null">
+        role_pid = #{rolePid,jdbcType=INTEGER},
+      </if>
+      <if test="menuPid != null">
+        menu_pid = #{menuPid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where srm_id = #{srmId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.java18.sys.model.SysRoleMenu">
+    <!--@mbg.generated-->
+    update sys_role_menu
+    set role_pid = #{rolePid,jdbcType=INTEGER},
+      menu_pid = #{menuPid,jdbcType=INTEGER}
+    where srm_id = #{srmId,jdbcType=INTEGER}
+  </update>
+</mapper>

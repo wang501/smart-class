@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.java18.sys.mapper.SysOrgMapper">
+  <resultMap id="BaseResultMap" type="cn.java18.sys.model.SysOrg">
+    <!--@mbg.generated-->
+    <!--@Table sys_org-->
+    <id column="org_id" jdbcType="INTEGER" property="orgId" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="org_no" jdbcType="VARCHAR" property="orgNo" />
+    <result column="org_pid" jdbcType="INTEGER" property="orgPid" />
+    <result column="org_status" jdbcType="INTEGER" property="orgStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    org_id, org_name, org_no, org_pid, org_status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_org
+    where org_id = #{orgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from sys_org
+    where org_id = #{orgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="org_id" keyProperty="orgId" parameterType="cn.java18.sys.model.SysOrg" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_org (org_name, org_no, org_pid, 
+      org_status)
+    values (#{orgName,jdbcType=VARCHAR}, #{orgNo,jdbcType=VARCHAR}, #{orgPid,jdbcType=INTEGER}, 
+      #{orgStatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="org_id" keyProperty="orgId" parameterType="cn.java18.sys.model.SysOrg" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_org
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orgName != null">
+        org_name,
+      </if>
+      <if test="orgNo != null">
+        org_no,
+      </if>
+      <if test="orgPid != null">
+        org_pid,
+      </if>
+      <if test="orgStatus != null">
+        org_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orgName != null">
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNo != null">
+        #{orgNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPid != null">
+        #{orgPid,jdbcType=INTEGER},
+      </if>
+      <if test="orgStatus != null">
+        #{orgStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.java18.sys.model.SysOrg">
+    <!--@mbg.generated-->
+    update sys_org
+    <set>
+      <if test="orgName != null">
+        org_name = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNo != null">
+        org_no = #{orgNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPid != null">
+        org_pid = #{orgPid,jdbcType=INTEGER},
+      </if>
+      <if test="orgStatus != null">
+        org_status = #{orgStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where org_id = #{orgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.java18.sys.model.SysOrg">
+    <!--@mbg.generated-->
+    update sys_org
+    set org_name = #{orgName,jdbcType=VARCHAR},
+      org_no = #{orgNo,jdbcType=VARCHAR},
+      org_pid = #{orgPid,jdbcType=INTEGER},
+      org_status = #{orgStatus,jdbcType=INTEGER}
+    where org_id = #{orgId,jdbcType=INTEGER}
+  </update>
+</mapper>

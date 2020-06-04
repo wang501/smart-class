@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.java18.sys.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="cn.java18.sys.model.SysUser">
+    <!--@mbg.generated-->
+    <!--@Table sys_user-->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="user_no" jdbcType="INTEGER" property="userNo" />
+    <result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
+    <result column="org_pid" jdbcType="INTEGER" property="orgPid" />
+    <result column="role_pid" jdbcType="INTEGER" property="rolePid" />
+    <result column="user_status" jdbcType="INTEGER" property="userStatus" />
+    <result column="user_del_flag" jdbcType="INTEGER" property="userDelFlag" />
+    <result column="user_cuid" jdbcType="INTEGER" property="userCuid" />
+    <result column="user_cdate" jdbcType="TIMESTAMP" property="userCdate" />
+    <result column="user_euid" jdbcType="INTEGER" property="userEuid" />
+    <result column="user_edate" jdbcType="TIMESTAMP" property="userEdate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    user_id, user_name, user_phone, user_no, user_pwd, org_pid, role_pid, user_status, 
+    user_del_flag, user_cuid, user_cdate, user_euid, user_edate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from sys_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="cn.java18.sys.model.SysUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_user (user_name, user_phone, user_no, 
+      user_pwd, org_pid, role_pid, 
+      user_status, user_del_flag, user_cuid, 
+      user_cdate, user_euid, user_edate
+      )
+    values (#{userName,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR}, #{userNo,jdbcType=INTEGER}, 
+      #{userPwd,jdbcType=VARCHAR}, #{orgPid,jdbcType=INTEGER}, #{rolePid,jdbcType=INTEGER}, 
+      #{userStatus,jdbcType=INTEGER}, #{userDelFlag,jdbcType=INTEGER}, #{userCuid,jdbcType=INTEGER}, 
+      #{userCdate,jdbcType=TIMESTAMP}, #{userEuid,jdbcType=INTEGER}, #{userEdate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="cn.java18.sys.model.SysUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userPhone != null">
+        user_phone,
+      </if>
+      <if test="userNo != null">
+        user_no,
+      </if>
+      <if test="userPwd != null">
+        user_pwd,
+      </if>
+      <if test="orgPid != null">
+        org_pid,
+      </if>
+      <if test="rolePid != null">
+        role_pid,
+      </if>
+      <if test="userStatus != null">
+        user_status,
+      </if>
+      <if test="userDelFlag != null">
+        user_del_flag,
+      </if>
+      <if test="userCuid != null">
+        user_cuid,
+      </if>
+      <if test="userCdate != null">
+        user_cdate,
+      </if>
+      <if test="userEuid != null">
+        user_euid,
+      </if>
+      <if test="userEdate != null">
+        user_edate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userNo != null">
+        #{userNo,jdbcType=INTEGER},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPid != null">
+        #{orgPid,jdbcType=INTEGER},
+      </if>
+      <if test="rolePid != null">
+        #{rolePid,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null">
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userDelFlag != null">
+        #{userDelFlag,jdbcType=INTEGER},
+      </if>
+      <if test="userCuid != null">
+        #{userCuid,jdbcType=INTEGER},
+      </if>
+      <if test="userCdate != null">
+        #{userCdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userEuid != null">
+        #{userEuid,jdbcType=INTEGER},
+      </if>
+      <if test="userEdate != null">
+        #{userEdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.java18.sys.model.SysUser">
+    <!--@mbg.generated-->
+    update sys_user
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhone != null">
+        user_phone = #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userNo != null">
+        user_no = #{userNo,jdbcType=INTEGER},
+      </if>
+      <if test="userPwd != null">
+        user_pwd = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="orgPid != null">
+        org_pid = #{orgPid,jdbcType=INTEGER},
+      </if>
+      <if test="rolePid != null">
+        role_pid = #{rolePid,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null">
+        user_status = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userDelFlag != null">
+        user_del_flag = #{userDelFlag,jdbcType=INTEGER},
+      </if>
+      <if test="userCuid != null">
+        user_cuid = #{userCuid,jdbcType=INTEGER},
+      </if>
+      <if test="userCdate != null">
+        user_cdate = #{userCdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userEuid != null">
+        user_euid = #{userEuid,jdbcType=INTEGER},
+      </if>
+      <if test="userEdate != null">
+        user_edate = #{userEdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.java18.sys.model.SysUser">
+    <!--@mbg.generated-->
+    update sys_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      user_no = #{userNo,jdbcType=INTEGER},
+      user_pwd = #{userPwd,jdbcType=VARCHAR},
+      org_pid = #{orgPid,jdbcType=INTEGER},
+      role_pid = #{rolePid,jdbcType=INTEGER},
+      user_status = #{userStatus,jdbcType=INTEGER},
+      user_del_flag = #{userDelFlag,jdbcType=INTEGER},
+      user_cuid = #{userCuid,jdbcType=INTEGER},
+      user_cdate = #{userCdate,jdbcType=TIMESTAMP},
+      user_euid = #{userEuid,jdbcType=INTEGER},
+      user_edate = #{userEdate,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>
