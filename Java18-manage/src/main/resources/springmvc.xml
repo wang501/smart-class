@@ -10,7 +10,11 @@
         https://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <context:component-scan base-package="cn.Java18.sys.controller">
-    </context:component-scan>
-
+        <!--组件扫描-->
+        <context:component-scan base-package="cn.java18.*.controller"/>
+        <mvc:resources mapping="/admin/**" location="/admin/"/>
+        <mvc:resources mapping="/admin/css/**" location="/admin/css"/>
+        <mvc:resources mapping="/admin/js/**" location="/admin/js"/>
+        <mvc:resources mapping="/admin/fonts/**" location="/admin/fonts"/>
+       <mvc:annotation-driven/>
 </beans>
