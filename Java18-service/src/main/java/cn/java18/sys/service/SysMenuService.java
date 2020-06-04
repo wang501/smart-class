@@ -3,7 +3,6 @@ package cn.java18.sys.service;
 import cn.java18.sys.model.SysMenu;
 public interface SysMenuService{
 
-
     int deleteByPrimaryKey(Integer menuId);
 
     int insert(SysMenu record);

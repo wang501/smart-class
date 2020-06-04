@@ -1,15 +1,17 @@
 package cn.java18.sys.service.impl;
 
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import cn.java18.sys.model.SysMenu;
 import cn.java18.sys.mapper.SysMenuMapper;
 import cn.java18.sys.service.SysMenuService;
+import javax.annotation.Resource;
+
+
 @Service
 public class SysMenuServiceImpl implements SysMenuService{
 
-    @Resource
-    private SysMenuMapper sysMenuMapper;
+   @Resource
+   private SysMenuMapper sysMenuMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer menuId) {
