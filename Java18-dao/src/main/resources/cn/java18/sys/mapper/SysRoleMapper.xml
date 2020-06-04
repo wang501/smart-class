@@ -140,4 +140,9 @@
       role_edate = #{roleEdate,jdbcType=TIMESTAMP}
     where role_id = #{roleId,jdbcType=INTEGER}
   </update>
+  <select id="selRoleMenus"   resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_role
+  </select>
 </mapper>

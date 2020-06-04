@@ -1,10 +1,12 @@
 package cn.java18.sys.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import cn.java18.sys.model.SysMenu;
 import cn.java18.sys.mapper.SysMenuMapper;
 import cn.java18.sys.service.SysMenuService;
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Service
@@ -41,6 +43,11 @@ public class SysMenuServiceImpl implements SysMenuService{
     @Override
     public int updateByPrimaryKey(SysMenu record) {
         return sysMenuMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<SysMenu> findSysMenus() {
+        return sysMenuMapper.selSysMenus();
     }
 
 }

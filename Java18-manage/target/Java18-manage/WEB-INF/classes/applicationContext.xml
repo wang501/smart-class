@@ -12,7 +12,7 @@
         https://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/tx
         https://www.springframework.org/schema/tx/spring-tx.xsd">
-        <context:component-scan base-package="cn.java18.*"/>
+        <context:component-scan base-package="cn.java18"/>
         <!--连接数据库-->
         <context:property-placeholder location="classpath:db.properties"/>
         <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -20,11 +20,11 @@
                 <property name="jdbcUrl" value="${jdbc.url}"/>
                 <property name="user" value="${jdbc.username}"/>
                 <property name="password" value="${jdbc.password}"/>
-                <property name="minPoolSize" value="0" />
-                <property name="maxPoolSize" value="10" />
-                <property name="acquireIncrement" value="5" />
-                <property name="maxIdleTime" value="10" />
-                <property name="maxStatements" value="0" />
+<!--                <property name="minPoolSize" value="0" />-->
+<!--                <property name="maxPoolSize" value="10" />-->
+<!--                <property name="acquireIncrement" value="5" />-->
+<!--                <property name="maxIdleTime" value="10" />-->
+<!--                <property name="maxStatements" value="0" />-->
         </bean>
         <!--使用spring IOC 创建 sqlSessionFactory-->
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -44,7 +44,7 @@
         </bean>
         <!--使用MapperScannerConfigure 自动生成mapper接口代理对象，并把它们纳入IOC管理-->
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-                <property name="basePackage" value="cn.java18.*.mapper"/>
+                <property name="basePackage" value="cn.java18.sys.mapper"/>
                 <!--配置sqlSessionFactory使用sqlSessionFactoryBean name注入sqlSessionFactory-->
                 <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory">
 
@@ -75,4 +75,5 @@
                 <!--配置 哪些切入点使用 baseTxAdvice 事务增强通知-->
                 <aop:advisor advice-ref="baseTxAdvice" pointcut-ref="'txPoint"/>
         </aop:config>
+
 </beans>

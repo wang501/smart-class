@@ -2,6 +2,8 @@ package cn.java18.sys.mapper;
 
 import cn.java18.sys.model.SysRole;
 
+import java.util.List;
+
 public interface SysRoleMapper {
     int deleteByPrimaryKey(Integer roleId);
 
@@ -14,4 +16,6 @@ public interface SysRoleMapper {
     int updateByPrimaryKeySelective(SysRole record);
 
     int updateByPrimaryKey(SysRole record);
+
+    List<SysRole> selRoleMenus();
 }

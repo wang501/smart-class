@@ -1,6 +1,9 @@
 package cn.java18.sys.service;
 
 import cn.java18.sys.model.SysMenu;
+
+import java.util.List;
+
 public interface SysMenuService{
 
     int deleteByPrimaryKey(Integer menuId);
@@ -14,5 +17,7 @@ public interface SysMenuService{
     int updateByPrimaryKeySelective(SysMenu record);
 
     int updateByPrimaryKey(SysMenu record);
+
+    List<SysMenu> findSysMenus();
 
 }

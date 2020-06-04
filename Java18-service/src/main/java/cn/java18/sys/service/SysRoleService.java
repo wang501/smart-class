@@ -1,8 +1,10 @@
 package cn.java18.sys.service;
 
 import cn.java18.sys.model.SysRole;
-public interface SysRoleService{
 
+import java.util.List;
+
+public interface SysRoleService{
 
     int deleteByPrimaryKey(Integer roleId);
 
@@ -16,4 +18,5 @@ public interface SysRoleService{
 
     int updateByPrimaryKey(SysRole record);
 
+    List<SysRole> FindRoleMenus();
 }

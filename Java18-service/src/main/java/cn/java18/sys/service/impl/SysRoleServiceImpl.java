@@ -5,6 +5,9 @@ import javax.annotation.Resource;
 import cn.java18.sys.mapper.SysRoleMapper;
 import cn.java18.sys.model.SysRole;
 import cn.java18.sys.service.SysRoleService;
+
+import java.util.List;
+
 @Service
 public class SysRoleServiceImpl implements SysRoleService{
 
@@ -39,6 +42,11 @@ public class SysRoleServiceImpl implements SysRoleService{
     @Override
     public int updateByPrimaryKey(SysRole record) {
         return sysRoleMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<SysRole> FindRoleMenus() {
+        return sysRoleMapper.selRoleMenus();
     }
 
 }
