@@ -5,40 +5,27 @@ import javax.annotation.Resource;
 import cn.java18.sys.model.SysRoleMenu;
 import cn.java18.sys.mapper.SysRoleMenuMapper;
 import cn.java18.sys.service.SysRoleMenuService;
+
+import java.util.List;
+
 @Service
 public class SysRoleMenuServiceImpl implements SysRoleMenuService{
 
     @Resource
-    private SysRoleMenuMapper sysRoleMenuMapper;
+    private SysRoleMenuMapper sysRoleMenu;
 
     @Override
-    public int deleteByPrimaryKey(Integer srmId) {
-        return sysRoleMenuMapper.deleteByPrimaryKey(srmId);
+    public List<SysRoleMenu> listByRolePidRoleMenus(Integer rolePid) {
+        return sysRoleMenu.listByRolePidRoleMenus(rolePid);
     }
 
     @Override
-    public int insert(SysRoleMenu record) {
-        return sysRoleMenuMapper.insert(record);
+    public int roleGrant(Integer roleId, List<Integer> menuIds) {
+        sysRoleMenu.deleteRoleMenuByRolePid(roleId);
+        int i = 0;
+        if (menuIds.size()>0){
+            i = sysRoleMenu.insertByList(roleId,menuIds);
+        }
+        return i;
     }
-
-    @Override
-    public int insertSelective(SysRoleMenu record) {
-        return sysRoleMenuMapper.insertSelective(record);
-    }
-
-    @Override
-    public SysRoleMenu selectByPrimaryKey(Integer srmId) {
-        return sysRoleMenuMapper.selectByPrimaryKey(srmId);
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(SysRoleMenu record) {
-        return sysRoleMenuMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(SysRoleMenu record) {
-        return sysRoleMenuMapper.updateByPrimaryKey(record);
-    }
-
 }

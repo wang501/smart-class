@@ -1,6 +1,8 @@
 package cn.java18.sys.service;
 
 import cn.java18.sys.model.SysRole;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -10,7 +12,7 @@ public interface SysRoleService{
 
     int insert(SysRole record);
 
-    int insertSelective(SysRole record);
+    boolean insertSelective(SysRole record);
 
     SysRole selectByPrimaryKey(Integer roleId);
 
@@ -18,5 +20,7 @@ public interface SysRoleService{
 
     int updateByPrimaryKey(SysRole record);
 
-    List<SysRole> FindRoleMenus();
+    PageInfo<SysRole> FindRoleMenus(Integer pageNum, Integer pageSize,SysRole sysRole);
+
+    SysRole findRoleById(int roleId);
 }

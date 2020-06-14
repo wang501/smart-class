@@ -158,4 +158,12 @@
     <include refid="Base_Column_List" />
     from sys_menu
   </select>
+   <select id="selSysMenusById"   resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sys_menu
+    <where>
+      menu_id = #{menuId,jdbcType=INTEGER}
+   </where>
+  </select>
 </mapper>

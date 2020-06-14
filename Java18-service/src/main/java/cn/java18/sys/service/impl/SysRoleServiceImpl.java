@@ -1,5 +1,7 @@
 package cn.java18.sys.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import cn.java18.sys.mapper.SysRoleMapper;
@@ -25,8 +27,8 @@ public class SysRoleServiceImpl implements SysRoleService{
     }
 
     @Override
-    public int insertSelective(SysRole record) {
-        return sysRoleMapper.insertSelective(record);
+    public boolean insertSelective(SysRole record) {
+        return sysRoleMapper.insertSelective(record) > 0 ? true : false;
     }
 
     @Override
@@ -45,8 +47,16 @@ public class SysRoleServiceImpl implements SysRoleService{
     }
 
     @Override
-    public List<SysRole> FindRoleMenus() {
-        return sysRoleMapper.selRoleMenus();
+    public PageInfo<SysRole> FindRoleMenus(Integer pageNum, Integer pageSize,SysRole sysRole) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<SysRole> sysRoles = sysRoleMapper.selRoleMenus(sysRole);
+        return new PageInfo<>(sysRoles);
     }
+
+    @Override
+    public SysRole findRoleById(int roleId) {
+        return sysRoleMapper.findRoleById(roleId);
+    }
+
 
 }

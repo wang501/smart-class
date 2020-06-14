@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../xAdmin/css/font.css">
         <link rel="stylesheet" href="../xAdmin/css/xadmin.css">
         <link rel="stylesheet" href="../zTree_v3/css/zTreeStyle/zTreeStyle.css">
-        <script src="../zTree_v3/js/jquery-1.4.4.min.js"></script>
+        <script src="../zTree_v3/js/jquery-3.5.1.min.js"></script>
         <script src="../zTree_v3/js/jquery.ztree.core.min.js"></script>
         <script src="../xAdmin/lib/layui/layui.js" charset="utf-8"></script>
         <!--解决缓存在相应的js后面添加个v=1-->
@@ -186,7 +186,6 @@
                     }else {
                         url += "?d="+new Date().getTime();
                     }
-
                     xadmin.add_tab(treeNode.menuId,treeNode.menuName,url);
                 }else{
                     var zTree = $.fn.zTree.getZTreeObj("treeDemo");
@@ -199,7 +198,6 @@
                 var treeObj = $("#treeDemo");
                 // 初识化ztree
                 $.fn.zTree.init(treeObj, setting);
-
                 zTree_Menu = $.fn.zTree.getZTreeObj("treeDemo");
                 // curMenu = zTree_Menu.getNodes()[0].children[0].children[0];
                 // zTree_Menu.selectNode(curMenu);

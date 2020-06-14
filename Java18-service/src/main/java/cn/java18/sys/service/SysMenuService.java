@@ -20,4 +20,11 @@ public interface SysMenuService{
 
     List<SysMenu> findSysMenus();
 
+    /**
+     * 根据id查询相应的菜单列表
+     * @param menuId
+     * @return
+     */
+    List<SysMenu> selSysMenusById(Integer menuId);
+
 }

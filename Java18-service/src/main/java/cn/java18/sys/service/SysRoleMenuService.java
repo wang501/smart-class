@@ -1,19 +1,13 @@
 package cn.java18.sys.service;
 
 import cn.java18.sys.model.SysRoleMenu;
+import org.apache.ibatis.annotations.Param;
+import java.util.List;
+
 public interface SysRoleMenuService{
 
 
-    int deleteByPrimaryKey(Integer srmId);
-
-    int insert(SysRoleMenu record);
-
-    int insertSelective(SysRoleMenu record);
-
-    SysRoleMenu selectByPrimaryKey(Integer srmId);
-
-    int updateByPrimaryKeySelective(SysRoleMenu record);
-
-    int updateByPrimaryKey(SysRoleMenu record);
+    List<SysRoleMenu> listByRolePidRoleMenus(Integer rolePid);
+    int roleGrant(Integer roleId,List<Integer> menuIds);
 
 }

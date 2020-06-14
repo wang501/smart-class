@@ -140,9 +140,26 @@
       role_edate = #{roleEdate,jdbcType=TIMESTAMP}
     where role_id = #{roleId,jdbcType=INTEGER}
   </update>
-  <select id="selRoleMenus"   resultMap="BaseResultMap">
+  <select id="selRoleMenus"   resultMap="BaseResultMap" parameterType="cn.java18.sys.model.SysRole">
     select
     <include refid="Base_Column_List" />
     from sys_role
+    <where>
+      <if test="roleName != null and roleName != ''">
+        <bind name="myRoleName" value="'%' + _parameter.roleName + '%'"/>
+        role_name like #{myRoleName,jdbcType=VARCHAR}
+      </if>
+      <if test="roleStatus != null">
+      and  role_status = #{roleStatus,jdbcType=INTEGER}
+      </if>
+    </where>
   </select>
+  <select id="findRoleById" parameterType="cn.java18.sys.model.SysRole" resultMap="BaseResultMap">
+        select
+    <include refid="Base_Column_List" />
+    from sys_role
+    <where>
+              role_id = #{roleId,jdbcType=VARCHAR}
+    </where>
+</select>
 </mapper>

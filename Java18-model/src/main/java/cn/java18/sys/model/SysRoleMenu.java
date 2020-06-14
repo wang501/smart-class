@@ -5,17 +5,8 @@ import lombok.Data;
 
 @Data
 public class SysRoleMenu implements Serializable {
-    private Integer srmId;
-
-    /**
-    * 关联角色主键
-    */
-    private Integer rolePid;
-
-    /**
-    * 关联菜单主键
-    */
+    private Integer menuId;
     private Integer menuPid;
-
-    private static final long serialVersionUID = 1L;
+    private String menuName;
+    private Integer checked;
 }

@@ -50,4 +50,9 @@ public class SysMenuServiceImpl implements SysMenuService{
         return sysMenuMapper.selSysMenus();
     }
 
+    @Override
+    public List<SysMenu> selSysMenusById(Integer menuId) {
+        return sysMenuMapper.selSysMenusById(menuId);
+    }
+
 }

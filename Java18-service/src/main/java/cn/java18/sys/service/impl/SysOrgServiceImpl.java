@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import cn.java18.sys.model.SysOrg;
 import cn.java18.sys.mapper.SysOrgMapper;
 import cn.java18.sys.service.SysOrgService;
+
 @Service
 public class SysOrgServiceImpl implements SysOrgService{
 

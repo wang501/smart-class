@@ -51,15 +51,28 @@
         </bean>
         <!--过滤静态资源-->
         <mvc:default-servlet-handler/>
-        <mvc:resources mapping="/admin/**" location="/admin/role"/>
+        <mvc:resources mapping="/admin/**" location="/admin/"/>
         <mvc:resources mapping="/xAdmin/css/**" location="/xAdmin/css/**"/>
         <mvc:resources mapping="/xAdmin/fonts/**" location="/xAdmin/fonts/**"/>
-        <mvc:resources mapping="/xAdmin/images/**" location="/xAdmin/images/**"/>
+        <mvc:resources mapping="/xAdmin/images/**" location="/xAdmin/images"/>
         <mvc:resources mapping="/xAdmin/js/**" location="/xAdmin/js/**"/>
         <mvc:resources mapping="/xAdmin/lib/**" location="/xAdmin/lib/"/>
-        <mvc:resources mapping="/zTree_v3/api/" location="/zTree_v3/api/"/>
+        <mvc:resources mapping="/zTree_v3/api/" location="/zTree_v3/api"/>
         <mvc:resources mapping="/zTree_v3/css/" location="/zTree_v3/css/"/>
         <mvc:resources mapping="/zTree_v3/img/" location="/zTree_v3/img/**"/>
         <mvc:resources mapping="/zTree_v3/js/" location="/zTree_v3/js/**"/>
+<!--        <mvc:default-servlet-handler/>-->
+<!--        <mvc:resources mapping="/login.html" location="/"/>-->
+<!--        <mvc:resources mapping="/admin/*.html" location="/admin/"/>-->
+<!--        <mvc:resources mapping="/admin/role/*.html" location="/admin/role/" order="0"/>-->
+<!--        <mvc:resources mapping="/xAdmin/css/**" location="/xAdmin/css/"/>-->
+<!--        <mvc:resources mapping="/xAdmin/fonts/**" location="/xAdmin/fonts/"/>-->
+<!--        <mvc:resources mapping="/xAdmin/images/**" location="/xAdmin/images/"/>-->
+<!--        <mvc:resources mapping="/xAdmin/js/**" location="/xAdmin/js/"/>-->
+<!--        <mvc:resources mapping="/xAdmin/lib/**" location="/xAdmin/lib/"/>-->
+<!--        <mvc:resources mapping="/zTree_v3/api/" location="/zTree_v3/api"/>-->
+<!--        <mvc:resources mapping="/zTree_v3/css/" location="/zTree_v3/css"/>-->
+<!--        <mvc:resources mapping="/zTree_v3/img/" location="/zTree_v3/img"/>-->
+<!--         <mvc:resources mapping="/zTree_v3/js/" location="/zTree_v3/js"/>-->
         <mvc:annotation-driven/>
 </beans>
