@@ -154,10 +154,11 @@
     where menu_id = #{menuId,jdbcType=INTEGER}
   </update>
   <select id="selSysMenus"   resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from sys_menu
+    select sm.menu_id,sm.menu_pid,sm.menu_name,sm.menu_url
+    from sys_menu sm INNER JOIN sys_role_menu srm  on sm.menu_id = srm.menu_pid
+     where srm.role_pid = #{rolePid,jdbcType=INTEGER} and menu_show=0
   </select>
+
    <select id="selSysMenusById"   resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

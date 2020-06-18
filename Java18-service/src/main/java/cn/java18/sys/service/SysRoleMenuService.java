@@ -10,4 +10,11 @@ public interface SysRoleMenuService{
     List<SysRoleMenu> listByRolePidRoleMenus(Integer rolePid);
     int roleGrant(Integer roleId,List<Integer> menuIds);
 
+    /**
+     * 根据角色获取对应权限编号
+     * @param roleId
+     * @return
+     */
+    List<Integer> selMenuIdByRoleId(Integer roleId);
+
 }

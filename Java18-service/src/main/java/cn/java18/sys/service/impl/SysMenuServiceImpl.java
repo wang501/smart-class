@@ -46,8 +46,8 @@ public class SysMenuServiceImpl implements SysMenuService{
     }
 
     @Override
-    public List<SysMenu> findSysMenus() {
-        return sysMenuMapper.selSysMenus();
+    public List<SysMenu> findSysMenus(Integer rolePid) {
+        return sysMenuMapper.selSysMenus(rolePid);
     }
 
     @Override

@@ -48,7 +48,6 @@
 	}
 
   Xadmin.prototype.del_tab = function (id) {
-
     if(id){
       console.log(88);
     }else{

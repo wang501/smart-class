@@ -18,7 +18,7 @@ public interface SysMenuService{
 
     int updateByPrimaryKey(SysMenu record);
 
-    List<SysMenu> findSysMenus();
+    List<SysMenu> findSysMenus(Integer rolePid);
 
     /**
      * 根据id查询相应的菜单列表

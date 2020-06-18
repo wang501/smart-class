@@ -1,12 +1,11 @@
 package cn.java18.sys.roleManage;
 
+import cn.java18.sys.annotation.RoleAnnotation;
 import cn.java18.sys.model.SysRole;
 import cn.java18.sys.service.SysRoleService;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
@@ -16,10 +15,10 @@ import java.util.Map;
 @Controller
 @RequestMapping("role")
 public class RoleController {
-
     @Resource
     private SysRoleService roleService;
 
+    @RoleAnnotation({2,3,5,6})
     @RequestMapping("roleList")
     @ResponseBody
     public Map<String,Object> roleList(Integer pageNum,Integer pageSize,SysRole sysRole){
@@ -37,7 +36,7 @@ public class RoleController {
             oom.put("count",total);
             oom.put("data",list);
         }else{
-            oom.put("code",-1);
+            oom.put("code",1);
             oom.put("msg","数据上传失败");
         }
         return oom;

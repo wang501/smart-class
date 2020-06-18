@@ -28,4 +28,9 @@ public class SysRoleMenuServiceImpl implements SysRoleMenuService{
         }
         return i;
     }
+
+    @Override
+    public List<Integer> selMenuIdByRoleId(Integer roleId) {
+        return sysRoleMenu.selMenuIdByRoleId(roleId);
+    }
 }

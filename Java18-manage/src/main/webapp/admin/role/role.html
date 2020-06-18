@@ -77,8 +77,6 @@
                 ,url: '/Java18_manage_war_exploded/role/roleList.do' //数据接口
                 ,page: true //开启分页
                 ,cols: [[
-                    //表头
-                    // ,{field: 'checkbox', title: checked, width:80, sort: true, fixed: 'left'}
                     {field: 'roleId', title: 'ID', width:80, sort: true, fixed: 'left'}
                     ,{field: 'roleName', title: '角色名', width:120}
                     ,{field: 'roleStatus', title: '状态', width:100,templet:function (d) {
@@ -116,7 +114,7 @@
                         }}
                     ,{field: 'setAuthority', title: '操作', width:70,templet:function (d) {
                             if (d.roleDefault < 1) {
-                                var authority = '<a title="权限管理" role_setAuthority_id="' + d.roleId + '"    href="javascript:;"><i class="layui-icon" style="color: #0C0C0C">&#xe614;</i></a>';
+                                var authority = '<a title="权限管理" role_setAuthority_id="' + d.roleId + '"    href="javascript:;"><i class="layui-icon" style="color: #00FF00">&#xe672;</i></a>';
                                 return authority;
                             }else {
                                 return  "";
@@ -247,7 +245,7 @@
                     roleStatus = 0;
                     $.ajax({
                         type: "post",
-                        url: "/Java18_manage_war_exploded/menuList/setAuthority.do",
+                        url: "/Java18_manage_war_exploded/role/roleStatus.do",
                         dataType:'json',
                         data: {
                             roleStatus:roleStatus,

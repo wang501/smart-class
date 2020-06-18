@@ -1,10 +1,15 @@
 package cn.java18.sys.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import cn.java18.sys.model.SysUser;
 import cn.java18.sys.mapper.SysUserMapper;
 import cn.java18.sys.service.SysUserService;
+
+import java.util.List;
+
 @Service
 public class SysUserServiceImpl implements SysUserService{
 
@@ -39,6 +44,18 @@ public class SysUserServiceImpl implements SysUserService{
     @Override
     public int updateByPrimaryKey(SysUser record) {
         return sysUserMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo<SysUser> selectAll(Integer pageNum, Integer pageSize,SysUser sysUser) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<SysUser> sysUsers = sysUserMapper.selectAll();
+        return new PageInfo<>(sysUsers);
+    }
+
+    @Override
+    public SysUser selectByNameAndPwd(SysUser sysUser) {
+        return sysUserMapper.selectByNameAndPwd(sysUser);
     }
 
 }

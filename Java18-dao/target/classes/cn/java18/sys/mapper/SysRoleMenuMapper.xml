@@ -17,6 +17,7 @@ FROM
 ORDER BY
 	m.menu_order ASC
     </select>
+
     <insert id="insertByList">
     insert into sys_role_menu (role_pid,menu_pid) values
     <foreach collection="param2" item="menuId" open="(" close=")" separator="),(">
@@ -26,5 +27,8 @@ ORDER BY
     <delete id="deleteRoleMenuByRolePid">
     delete from sys_role_menu where role_pid = #{rolePid,jdbcType=INTEGER}
 </delete>
+    <select id="selMenuIdByRoleId" resultType="java.lang.Integer">
+        select menu_pid from sys_role_menu where role_pid = #{rolePid,jdbcType=INTEGER}
+    </select>
 
 </mapper>

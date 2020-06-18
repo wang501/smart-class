@@ -21,6 +21,11 @@
     from sys_org
     where org_id = #{orgId,jdbcType=INTEGER}
   </select>
+  <select id="selOrgAll" resultType="cn.java18.sys.model.SysOrg">
+   select
+    <include refid="Base_Column_List" />
+    from sys_org
+</select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
     delete from sys_org

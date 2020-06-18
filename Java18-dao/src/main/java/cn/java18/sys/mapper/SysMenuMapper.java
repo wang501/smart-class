@@ -17,7 +17,7 @@ public interface SysMenuMapper {
 
     int updateByPrimaryKey(SysMenu record);
 
-    List<SysMenu> selSysMenus();
+    List<SysMenu> selSysMenus(Integer rolePid);
 
     List<SysMenu> selSysMenusById(Integer menuId);
 }

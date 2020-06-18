@@ -6,6 +6,8 @@ import cn.java18.sys.model.SysOrg;
 import cn.java18.sys.mapper.SysOrgMapper;
 import cn.java18.sys.service.SysOrgService;
 
+import java.util.List;
+
 @Service
 public class SysOrgServiceImpl implements SysOrgService{
 
@@ -40,6 +42,11 @@ public class SysOrgServiceImpl implements SysOrgService{
     @Override
     public int updateByPrimaryKey(SysOrg record) {
         return sysOrgMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<SysOrg> selOrgAll() {
+        return sysOrgMapper.selOrgAll();
     }
 
 }

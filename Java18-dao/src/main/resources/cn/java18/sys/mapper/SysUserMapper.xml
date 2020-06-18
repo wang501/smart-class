@@ -30,6 +30,22 @@
     from sys_user
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
+  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from sys_user
+  </select>
+  <select id="selectByNameAndPwd" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from sys_user
+    <where>
+       user_name = #{userName,jdbcType=VARCHAR}
+       and user_pwd= #{userPwd,jdbcType=VARCHAR}
+    </where>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
     delete from sys_user

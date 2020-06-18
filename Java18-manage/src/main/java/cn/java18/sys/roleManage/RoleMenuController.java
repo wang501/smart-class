@@ -21,9 +21,7 @@ public class RoleMenuController {
     @GetMapping
     @ResponseBody
     public List<SysRoleMenu> listByRolePidRoleMenus(Integer roleId){
-        List<SysRoleMenu> sysRoleMenus = sysRoleMenuService.listByRolePidRoleMenus(roleId);
-        System.out.println(sysRoleMenus);
-        return  sysRoleMenus;
+        return  sysRoleMenuService.listByRolePidRoleMenus(roleId);
     }
     @PostMapping
     @ResponseBody

@@ -8,7 +8,6 @@
   <artifactId>smart-class</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-
   <modules>
     <module>Java18-dao</module>
     <module>Java18-service</module>
@@ -22,7 +21,7 @@
 
     <properties>
       <junit.version>4.11</junit.version>
-      <spring.version>5.0.2.RELEASE</spring.version>
+      <spring.version>5.2.7.RELEASE</spring.version>
       <mybatis.version>3.5.4</mybatis.version>
       <mysql.version>8.0.18</mysql.version>
       <mybatsi.spring.version>2.0.3</mybatsi.spring.version>
